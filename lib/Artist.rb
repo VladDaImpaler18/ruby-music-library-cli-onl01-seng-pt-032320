@@ -26,12 +26,10 @@ class Artist
   end
   
   def songs
-    Song.all.select { |song_obj| song_obj.artist == self }
+    Song.all.map { |song_obj| song_obj.artist == self }
   end
   
   def add_song(song_obj)
-    binding.pry
-    
-    
+
   end
 end

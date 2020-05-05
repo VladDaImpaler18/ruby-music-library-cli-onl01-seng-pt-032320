@@ -1,19 +1,21 @@
 require 'pry'
 class Song
   
-  attr_accessor :name, :artist
+  attr_accessor :name
+  attr_reader :artist, :genre
   @@all = []
   
   def initialize(title, artist_obj = nil, genre_object = nil)
     @name = title
     @artist = artist_obj
+    @genre = genre_object
   end
   
   def artist
-    @artist
+    Artist.select{ |artist_obj| artist_obj == self.artist }
   end
   
-  def artist(artist_obj)
+  def artist=(artist_obj)
     @artist = artist_obj
   end
   
