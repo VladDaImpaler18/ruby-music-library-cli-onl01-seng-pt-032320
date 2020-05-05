@@ -24,12 +24,10 @@ class Artist
     Artist.new(name).save
     self
   end
-  
-  def songs
-    Song.all.map { |song_obj| song_obj.artist == self }
-  end
-  
-  def add_song(song_obj)
 
+  def add_song(song_obj)
+    binding.pry
+    #Song.all.select { |s| s.artist == self }
+    #self.songs << song_obj if !Song.all.include?(self)
   end
 end

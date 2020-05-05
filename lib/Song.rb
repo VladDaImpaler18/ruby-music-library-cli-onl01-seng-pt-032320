@@ -1,8 +1,7 @@
 require 'pry'
 class Song
   
-  attr_accessor :name
-  attr_reader :artist, :genre
+  attr_accessor :name, :genre, :artist
   @@all = []
   
   def initialize(title, artist_obj = nil, genre_object = nil)
@@ -11,14 +10,15 @@ class Song
     @genre = genre_object
   end
   
-  def artist
-    Artist.select{ |artist_obj| artist_obj == self.artist }
-  end
+  #def artist
+    #binding.pry
+    #@artist
+    #Artist.all.select{ |artist_obj| artist_obj == self.artist }
+  #end
   
   def artist=(artist_obj)
     @artist = artist_obj
   end
-  
   
   def self.all
     @@all
