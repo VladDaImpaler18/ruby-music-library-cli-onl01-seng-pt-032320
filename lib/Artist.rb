@@ -26,8 +26,8 @@ class Artist
   end
 
   def add_song(song_obj)
-    binding.pry
-    #Song.all.select { |s| s.artist == self }
-    #self.songs << song_obj if !Song.all.include?(self)
+    #binding.pry
+    song_obj.artist = self if song_obj.artist == nil
+    self.songs << song_obj if !self.songs.include?(song_obj)
   end
 end
