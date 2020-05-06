@@ -21,13 +21,16 @@ class Artist
   end
   
   def self.create(name)
-    Artist.new(name).save
-    self
+    artist = Artist.new(name)
+    artist.save
+    artist
   end
 
   def add_song(song_obj)
-    song_obj.artist = self if song_obj.artist == nil
-    self.songs << song_obj if !self.songs.include?(song_obj)
+
+    song_obj.artist = self unless song_obj.artist
+    self.songs << song_obj unless self.songs.include?(song_obj)
+    #self.songs << song_obj if !Song.all.include?(self)
   end
   
   def genres

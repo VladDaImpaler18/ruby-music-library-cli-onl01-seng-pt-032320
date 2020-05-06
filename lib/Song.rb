@@ -3,7 +3,6 @@ class Song
   
   attr_accessor :name
   attr_reader :artist, :genre
-  
   @@all = []
   
   def initialize(title, artist_obj = nil, genre_object = nil)
@@ -12,11 +11,14 @@ class Song
     self.genre = genre_object if genre_object
   end
   
-  #def artist
-    #binding.pry
-    #@artist
-    #Artist.all.select{ |artist_obj| artist_obj == self.artist }
-  #end
+  # def self.find_by_name(song_name)
+  #     #binding.pry
+  #     Song.all.find{|s| s.name == song_name}
+  # end
+
+  # def self.find_or_create_by_name(song_name)
+  #   self.find_by_name(song_name) || Song.create(song_name)
+  # end
   
   def artist=(artist_obj)
     @artist = artist_obj
@@ -41,9 +43,9 @@ class Song
   end
   
   def self.create(title)
-    Song.new(title).save
-    self
+    song = Song.new(title)
+    song.save
+    song
   end
-  
   
 end
