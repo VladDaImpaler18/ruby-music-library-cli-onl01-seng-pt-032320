@@ -1,4 +1,4 @@
-require 'pry'
+require_relative '../config/environment.rb'
 class Song
   
   attr_accessor :name
@@ -11,14 +11,14 @@ class Song
     self.genre = genre_object if genre_object
   end
   
-  # def self.find_by_name(song_name)
-  #     #binding.pry
-  #     Song.all.find{|s| s.name == song_name}
-  # end
+  def self.find_by_name(song_name)
+      #binding.pry
+      Song.all.find{|s| s.name == song_name}
+  end
 
-  # def self.find_or_create_by_name(song_name)
-  #   self.find_by_name(song_name) || Song.create(song_name)
-  # end
+  def self.find_or_create_by_name(song_name)
+    self.find_by_name(song_name) || Song.create(song_name)
+  end
   
   def artist=(artist_obj)
     @artist = artist_obj

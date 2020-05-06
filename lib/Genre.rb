@@ -1,4 +1,6 @@
+require_relative '../config/environment.rb'
 class Genre
+  extend Findable
   
   attr_accessor :name, :songs
   @@all = []
