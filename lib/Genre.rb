@@ -29,5 +29,9 @@ class Genre
     self
   end
   
+  def artists
+    #Song.all.collect{|s| s.artist if s.genre==self}.uniq
+    self.songs.collect{ |s| s.artist}.uniq
+  end
   
 end

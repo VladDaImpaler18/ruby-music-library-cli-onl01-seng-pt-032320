@@ -26,8 +26,13 @@ class Artist
   end
 
   def add_song(song_obj)
-    #binding.pry
     song_obj.artist = self if song_obj.artist == nil
     self.songs << song_obj if !self.songs.include?(song_obj)
   end
+  
+  def genres
+    #Song.all.collect{|s| s.genre if s.artist==self}.uniq
+    self.songs.collect{ |s| s.genre}.uniq
+  end
+  
 end

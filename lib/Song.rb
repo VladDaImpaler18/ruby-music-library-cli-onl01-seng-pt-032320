@@ -25,7 +25,7 @@ class Song
   
   def genre=(genre_obj)
     @genre = genre_obj
-    genre_obj.songs << self if genre_obj.include?(self)
+    genre_obj.songs << self if !genre_obj.songs.include?(self)
   end
   
   def self.all
