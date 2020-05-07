@@ -18,6 +18,11 @@ class Song
 
   def self.find_or_create_by_name(song_name)
     self.find_by_name(song_name) || Song.create(song_name)
+      Song.all.find{|s| return s s.name == song_name}
+  end
+
+  def self.find_or_create_by_name(song_name)
+
   end
   
   def artist=(artist_obj)

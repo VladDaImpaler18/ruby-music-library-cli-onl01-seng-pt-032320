@@ -30,10 +30,8 @@ class Artist
   end
 
   def add_song(song_obj)
-
     song_obj.artist = self unless song_obj.artist
     self.songs << song_obj unless self.songs.include?(song_obj)
-    #self.songs << song_obj if !Song.all.include?(self)
   end
   
   def genres
